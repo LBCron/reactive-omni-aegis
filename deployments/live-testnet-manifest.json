@@ -1,0 +1,61 @@
+{
+  "verifiedAt": "2026-11-08T14:38:50.611Z",
+  "deployer": "0x958cbC9378c75cf158e5B19845E7f004B5f8c3f9",
+  "networks": {
+    "reactiveLasna": {
+      "chainId": 5318007,
+      "rpcUrl": "https://lasna-rpc.rnk.dev/",
+      "explorerUrl": "https://lasna.reactscan.net/",
+      "verifiedBlock": 7846333,
+      "systemContract": {
+        "address": "0x8888888888888888888888888888888888888888",
+        "bytecodeBytes": 239
+      },
+      "faucetBridges": {
+        "ethereumSepolia": "0x9b9BB25f1A81078C544C829c5EB7822d747Cf434",
+        "baseSepolia": "0x2afaFD298b23b62760711756088F75B7409f5967"
+      },
+      "contracts": {
+        "AIThreatSignalEmitter": {
+          "deterministicAddressNonce0": "0xDd116715Ef68a7D81a62730280a445751eD4CE5b",
+          "liveEstimateGas": "536908"
+        },
+        "OmniAegisReactiveGuard": {
+          "deterministicAddressNonce1": "0x4AF0fa04c75797f354E24e768E9AE1D9A655A1FA",
+          "subscribeOnDeploy": true,
+          "liveEstimateGas": "2506012"
+        }
+      }
+    },
+    "baseSepolia": {
+      "chainId": 84532,
+      "rpcUrl": "https://sepolia.base.org",
+      "verifiedBlock": 56134303,
+      "callbackProxy": {
+        "address": "0x476F44b11F5C942c58f4c8E3d0300E5710743585",
+        "bytecodeBytes": 218
+      },
+      "contracts": {
+        "AegisVaultCallbackReceiver": {
+          "deterministicAddressNonce0": "0xDd116715Ef68a7D81a62730280a445751eD4CE5b",
+          "liveEstimateGas": "1604979"
+        }
+      }
+    },
+    "unichainSepolia": {
+      "chainId": 1301,
+      "rpcUrl": "https://sepolia.unichain.org",
+      "verifiedBlock": 67296300,
+      "callbackProxy": {
+        "address": "0x775c9B990ADe401060B78D0e98684eEf8d2466C1",
+        "bytecodeBytes": 218
+      },
+      "contracts": {
+        "AegisVaultCallbackReceiver": {
+          "deterministicAddressNonce0": "0xDd116715Ef68a7D81a62730280a445751eD4CE5b",
+          "liveEstimateGas": "1604979"
+        }
+      }
+    }
+  }
+}
