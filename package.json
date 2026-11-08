@@ -1,0 +1,22 @@
+{
+  "name": "reactive-omni-aegis",
+  "version": "1.0.0",
+  "description": "Multi-Track Autonomous DeFi Protection, Personal Automation & Neural Threat Shield for Reactive Omni (CometBFT ~1s Finality)",
+  "license": "MIT",
+  "author": "Ronan Chen Lopes <ronanchenlopes@gmail.com> (@LBCron)",
+  "scripts": {
+    "build": "npx solcjs --optimize --bin --abi --base-path . --include-path lib -o out/solc contracts/OmniAegisReactiveGuard.sol contracts/AegisVaultCallbackReceiver.sol contracts/AIThreatSignalEmitter.sol contracts/mocks/MockOmniSystemContract.sol contracts/mocks/MockCallbackProxy.sol contracts/mocks/MockDEXPool.sol contracts/mocks/MockLendingMarket.sol test/OmniAegis.t.sol",
+    "test": "python3 -m unittest discover -s ai_agent -p 'test_*.py' -v && node --test test/omni-aegis.test.js",
+    "test:evm": "node --test test/omni-aegis.test.js",
+    "test:ai": "python3 -m unittest discover -s ai_agent -p 'test_*.py' -v",
+    "simulate": "python3 ai_agent/reactive_ai_engine.py --simulate"
+  },
+  "devDependencies": {
+    "@ethereumjs/common": "^10.1.1",
+    "@ethereumjs/tx": "^10.1.1",
+    "@ethereumjs/util": "^10.1.1",
+    "@ethereumjs/vm": "^10.1.1",
+    "ethers": "^6.13.4",
+    "solc": "^0.8.24"
+  }
+}
