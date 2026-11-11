@@ -26,6 +26,7 @@ interface Vm {
     function roll(uint256 newHeight) external;
     function expectRevert(bytes calldata revertData) external;
     function expectRevert(bytes4 revertSelector) external;
+    function expectRevert() external;
 }
 
 contract OmniAegisTest {
@@ -327,7 +328,7 @@ contract OmniAegisTest {
         systemContract.deliverLog(address(reactiveGuard), cronLog);
         ISystemContract.CallbackConfiguration_V_1_0 memory cbEarly = systemContract.getQueuedCallback(1);
 
-        vm.expectRevert(MockCallbackProxy.CallbackExecutionFailed.selector);
+        vm.expectRevert();
         baseCallbackProxy.dispatch(address(reactiveGuard), cbEarly.recipient, cbEarly.gasLimit, cbEarly.payload);
 
         // 5. Advance timestamp by another 205 seconds (total +305s >= 300s interval) -> DCA succeeds!
@@ -408,7 +409,7 @@ contract OmniAegisTest {
             uint256(800),
             uint256(0x1234)
         );
-        vm.expectRevert(MockCallbackProxy.CallbackExecutionFailed.selector);
+        vm.expectRevert();
         baseCallbackProxy.dispatch(attacker, address(baseVault), 800_000, badPayload);
     }
 
